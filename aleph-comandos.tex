@@ -1,0 +1,474 @@
+\documentclass[11pt,a4paper]{ltxdoc} 
+\usepackage[spanish,es-noindentfirst,es-tabla]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=2.5cm,left=3.5cm]{geometry}
+
+\usepackage{mathpazo}
+\usepackage{longtable}
+\usepackage{aleph-comandos}
+
+\setlength{\parskip}{0.2\baselineskip}
+\renewcommand{\baselinestretch}{1.1}
+
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\option}[1]{\texttt{#1}}
+\newcommand{\package}[1]{\texttt{#1}}
+\newcommand{\ejemplo}[2]{\fbox{#1}\hspace{1cm}\fbox{$#2$}}
+
+\title{\file{aleph-comandos.sty}}
+\author{Andr\'es Merino}
+\date{2019-12-17}
+
+\begin{document}
+ 
+\maketitle
+ 
+\begin{abstract}
+    \file{aleph-comandos.sty} es un paquete creado para recopilar varios comandos de uso común entre los colegas de Andrés Merino, dentro de su proyecto personal Alephsub0.
+\end{abstract}
+
+\section{Introducción}
+
+El paquete \file{aleph-comandos.sty} es parte del conjunto de clases y paquetes creados por Andrés Merino dentro de su proyecto personal Alephsub0. Este paquete está basado en el paquete \file{comandosEPN.sty} del mismo autor y se cambió su nombre para continuar con el mantenimiento del mismo dentro del proyecto Alephsub0.
+    
+El paquete provee de una variedad de comandos generados por Juan Carlos Trujillo, Jonathan Ortiz y Andrés Merino, que facilitan la escritura matemática.
+
+\section{Uso}
+
+Para cargar la clase se utiliza: \cs{usepackage}|{aleph-comandos}|.
+
+\section{Comandos}
+
+\subsection{Comandos de función}
+
+\DescribeMacro{\funcion} 
+    El comando \cs{funcion} tiene 5 argumentos en el formato\\
+        \hspace*{3em}\cs{funcion}\marg{nombre}\marg{dominio}\marg{conjunto de llegada}\marg{variable}\marg{ley de asignación},\\
+    con esto, la función genera
+    \begin{center}
+        |\funcion{f}{A}{B}{x}{f(x)}| 
+        \hspace{2cm}
+        \fbox{$\funcion{f}{A}{B}{x}{f(x)}$}
+    \end{center}
+    
+\DescribeMacro{\func} 
+    El comando \cs{func}  tiene 3 argumentos en el formato\\
+        \hspace*{3em}\cs{func}\marg{nombre}\marg{dominio}\marg{conjunto de llegada},\\
+    con esto, la función genera
+    \begin{center}
+        |\func{f}{A}{B}| \hspace{2cm}\fbox{$\func{f}{A}{B}$}
+    \end{center}
+    
+
+\subsection{Conjuntos}
+
+A continuación se detallan las definiciones de conjuntos:
+    \begin{center}
+    \begin{tabular}{ccc}
+    \hline
+    Comando & Resultado & Conjunto\\\hline
+        |\N| & $\N$ & Números naturales\\
+        |\Nbb| & $\Nbb$ & Números naturales \\
+        |\Z| & $\Z$ & Números enteros \\
+        |\Zbb| & $\Zbb$ & Números enteros \\
+        |\Q| & $\Q$ & Números racionales \\
+        |\Qbb| & $\Qbb$ & Números racionales \\
+        |\R| & $\R$ & Números reales \\
+        |\Rbb| & $\Rbb$ & Números reales \\
+        |\reales| & $\reales$ & Números reales \\
+        |\C| & $\C$ & Números complejos \\
+        |\Cbb| & $\Cbb$ & Números complejos \\
+        |\Ibb| & $\Ibb$ & Números irracionales \\
+        |\K| & $\K$ & Campo \\
+        |\Kbb| & $\Kbb$ & Campo \\
+        |\Pbb| & $\Pbb$ & Primos\\
+        |\Pol| & $\Pol$ & Polinomios \\
+        |\M| & $\M$ & Matrices \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+A pesar de las definiciones para matrices y polinomios, la notación recomendada es:
+\begin{itemize}
+    \item $\R_n[x]$: para polinomios de grado menor igual que $n$ a coeficientes reales en la variable $x$;
+    \item $\R^{n\times m}$: para matrices de orden $n\times m$ a coeficientes reales.
+\end{itemize}
+
+\DescribeMacro{\Mat}
+    Para este último se define el comando \cs{Mat} con dos argumentos obligatorios y uno opcional, con la siguiente sintaxis:\\
+        \hspace*{3em}\cs{Mat}\oarg{coeficiente}\marg{no. filas}\marg{no. columnas},\\
+    con esto, el comando genera
+    \begin{center}
+        |\Mat{3}{1}|
+        \hspace{2cm}
+        \fbox{$\Mat{3}{1}$}
+    \end{center}
+    \begin{center}
+        |\Mat[\Q]{3}{1}|
+        \hspace{2cm}
+        \fbox{$\Mat[\Q]{3}{1}$}
+    \end{center}
+    
+\subsection{Operadores}
+A continuación se detallan las definiciones de operadores matemáticos:
+    \begin{center}
+        \begin{longtable}{ccc}
+        \hline
+        Comando & Resultado & Operador  \\ \hline
+        \endfirsthead
+        \hline
+        Comando & Resultado & Operador  \\ \hline
+        \endhead
+        \hline 
+        \endfoot
+        \hline
+        \endlastfoot
+        |\dom| & $\dom$ & Dominio \\
+        |\Dom| & $\Dom$ & Dominio \\
+        |\rec| & $\rec$ & Recorrido \\
+        |\Rec| & $\Rec$ & Recorrido \\
+        |\img| & $\img$ & Imagen \\
+        |\Img| & $\Img$ & Imagen \\
+        |\rg| & $\rg$ & Rango de una matriz \\
+        |\rang| & $\rang$ & Rango de una matriz \\
+        |\adj| & $\adj$ & Matriz adjunta \\
+        |\cof| & $\cof$ & Matriz de cofactores \\
+        |\proy| & $\proy$ & Proyección \\
+        |\norm| & $\norm$ & Componente normal \\
+        |\inte| & $\inte$ & Interior de un conjunto \\
+        |\sin| & $\sin$ & Seno \\
+        |\arccsc| & $\arccsc$ & Arcocosecante \\
+        |\arccot| & $\arccot$ & Arcocotangente \\
+        |\arcsec| & $\arcsec$ & Arcosecante \\
+        |\spn| & $\spn$ & Espacio generado \\
+        |\gen| & $\gen$ & Espacio generado \\
+        |\im| & $\im$ & Parte imaginaria \\
+        |\re| & $\re$ & Parte real \\
+        |\graf| & $\graf$ & Gráfico de una función \\
+        |\sgn| & $\sgn$ & Signo \\
+        |\CVA| & $\CVA$ & Conjunto de valores admisibles \\
+        |\sol| & $\sol$ & Conjunto solución \\
+        |\Sol| & $\Sol$ & Conjunto solución \\
+        |\Cis| & $\Cis$ & Operador cis ($\cos + i \sen$) \\
+        |\cis| & $\cis$ & Operador cis ($\cos + i \sen$) \\
+        |\diam| & $\diam$ & Diámetro \\
+        |\Var| & $\Var$ & Varianza \\
+        |\Tr| & $\Tr$ & Traza \\
+        |\tr| & $\tr$ & Traza \\
+        |\mcd| & $\mcd$ & Máximo común divisor \\
+        |\mcm| & $\mcm$ & Mínimo común múltiplo \\
+        |\dive| & $\dive$ & Divergencia \\
+        |\rot| & $\rot$ & Rotacional \\
+        |\partes| & $\partes$ & Partes de un conjunto\\
+        \hline
+        \end{longtable}
+    \end{center}
+
+
+\subsection{Operadores como comandos}
+\DescribeMacro{\cl}
+    El comando \cs{cl} tiene 1 argumento en el formato\\
+        \hspace*{3em}\cs{cl}\marg{conjunto},\\
+    con esto, el comando genera
+    \begin{center}
+        |\cl{A}|
+        \hspace{2cm}
+        \fbox{$\cl{A}$}
+    \end{center}
+
+\DescribeMacro{\norma}
+    El comando \cs{norma} tiene 1 argumento en el formato\\
+        \hspace*{3em}\cs{norma}\marg{vector},\\
+    con esto, el comando genera
+    \begin{center}
+        |\norma{x}|
+        \hspace{2cm}
+        \fbox{$\norma{x}$}
+    \end{center}
+    Si el argumento se lo deja vacío, este genera:
+    \begin{center}
+        |\norma{}|
+        \hspace{2cm}
+        \fbox{$\norma{}$}
+    \end{center}
+    
+\DescribeMacro{\prodinner}
+    El comando \cs{prodinner} tiene dos argumentos en el formato\\
+        \hspace*{3em}\cs{prodinner}\marg{vector 1}\marg{vector 2}, \\
+    con esto, el comando genera
+    \begin{center}
+        |\prodinner{x}{y}|
+        \hspace{2cm}
+        \fbox{$\prodinner{x}{y}$}
+    \end{center}
+    Si los argumentos se los deja vacíos, el comando genera:
+    \begin{center}
+        |\prodinner{}{}|
+        \hspace{2cm}
+        \fbox{$\prodinner{}{}$}
+    \end{center}
+
+\DescribeMacro{\conjugado}
+    El comando \cs{conjugado} tiene 1 argumento en el formato\\
+        \hspace*{3em}\cs{conjugado}\marg{número},\\
+    con esto, el comando genera
+    \begin{center}
+        |\conjugate{z}|
+        \hspace{2cm}
+        \fbox{$\conjugate{z}$}
+    \end{center}
+    
+\DescribeMacro{\parcial}
+    El comando \cs{parcial} tiene dos argumentos en el formato\\
+        \hspace*{3em}\cs{parcial}\marg{función}\marg{variable}, \\
+    con esto, el comando genera
+    \begin{center}
+        |\parcial{f}{x}|
+        \hspace{2cm}
+        \fbox{$\parcial{f}{x}$}
+    \end{center}
+
+\DescribeMacro{\derivada}
+    El comando \cs{derivada} tiene dos argumentos en el formato\\
+        \hspace*{3em}\cs{derivada}\marg{función}\marg{variable}, \\
+    con esto, el comando genera
+    \begin{center}
+        |\derivada{f}{x}|
+        \hspace{2cm}
+        \fbox{$\derivada{f}{x}$}
+    \end{center}
+    
+Para más comandos útiles con respecto a derivadas, se puede utilizar el paquete |cool| (\url{https://ctan.org/pkg/cool}).
+
+\subsection{Abreviaciones}
+A continuación se detallan las abreviaciones que sirven únicamente en modo matemático.
+    \begin{center}
+        \begin{tabular}{ccc}
+        \hline
+            Comando & Resultado & Operador  \\ 
+        \hline
+            |\setminus| & $\setminus$ & Diferencia de conjuntos pequeña \\
+            |\sset| & $\sset$ & Contenencia de conjuntos con igual \\
+            |\emptyset| & $\emptyset$ & Conjunto vacío \\
+            |\vepsilon| & $\varepsilon$ & Épsilon \\
+            |\texty| & $.\texty.$ & Texto ``y'' con espacio \\
+            |\yds| & $.\yds.$ & Texto ``y'' con espacio \\
+            |\texto| & $.\texto.$ & Texto ``o'' con espacio \\
+            |\ods| & $.\ods.$ & Texto ``o'' con espacio \\
+            |\siysolosi| & $.\siysolosi.$ & Texto ``si y solo si'' con espacio\\
+            |\ssi| & $.\siysolosi.$ & Texto ``si y solo si'' con espacio\\
+            |\degre| & $\degre$ & Grados \\
+            |\grad| & $\grad$ & Grados \\
+            \hline
+        \end{tabular}
+\end{center}
+
+
+\subsection{Comandos desplegados}
+
+\DescribeMacro{\dlim}
+    El comando \cs{dlim} funciona como una abreviación de \cs{displaystyle}\cs{lim}
+    \begin{center}
+        |\dlim_{x \to a} f(x)|
+        \hspace{2cm}
+        \fbox{$\dlim_{x \to a} f(x)$}
+    \end{center}
+
+\DescribeMacro{\Lim}
+    El comando \cs{Lim} funciona como una abreviación de \cs{displaystyle}\cs{lim}
+    \begin{center}
+        |\Lim_{x \to a} f(x)|
+        \hspace{2cm}
+        \fbox{$\Lim_{x \to a} f(x)$}
+    \end{center}
+
+\DescribeMacro{\dsum}
+    El comando \cs{dsum} funciona como una abreviación de \cs{displaystyle}\cs{sum}
+    \begin{center}
+        |\dsum_{i=0}^{n} x_i|
+        \hspace{2cm}
+        \fbox{$\dsum_{i=0}^{n} x_i$}
+    \end{center}
+
+\DescribeMacro{\Sum}
+    El comando \cs{dsum} funciona como una abreviación de \cs{displaystyle}\cs{sum}
+    \begin{center}
+        |\Sum_{i=0}^{n} x_i|
+        \hspace{2cm}
+        \fbox{$\Sum_{i=0}^{n} x_i$}
+    \end{center}
+
+\DescribeMacro{\Binom}
+    El comando \cs{Binom} funciona como una abreviación de \cs{displaystyle}\cs{binom}
+    \begin{center}
+        |\Binom{n}{k}| 
+        \hspace{2cm}
+        \fbox{$\Binom{n}{k}$}
+    \end{center}
+    
+\DescribeMacro{\dint}
+    El comando \cs{dint} funciona como una abreviación de \cs{displaystyle}\cs{int}
+    \begin{center}
+        |\dint_a^b f |
+        \hspace{2cm}
+        \fbox{$\dint_a^b f $}
+    \end{center}
+
+\DescribeMacro{\Int}
+    El comando \cs{dint} funciona como una abreviación de \cs{displaystyle}\cs{int}
+    \begin{center}
+        |\Int_a^b f |
+        \hspace{2cm}
+        \fbox{$\Int_a^b f $}
+    \end{center}
+
+
+\subsection{Abreviaciones de operadores lógicos}
+A continuación se detallan las abreviaciones de operadores lógicos que sirven únicamente en modo matemático.
+\begin{center}
+    \begin{tabular}{ccc}
+    \hline
+        Comando & Resultado & Operador \\
+    \hline
+        |\Di| & $\Di$ & Doble implicación \\
+        |\dimp| & $\dimp$ & Doble implicación \\
+        |\Dimp| & $\Dimp$ & Doble implicación \\
+        |\imp| & $\imp$ & Implicación \\
+        |\Imp| & $\Imp$ & Implicación \\
+        |\qland| & $.\qland.$ & Conjunción con espacio\\
+        |\qlor| & $.\qlor.$ & Disyunción con espacio \\
+        |\orm| & $.\orm.$ & \\
+        |\andm| & $.\andm.$ & Disyunción con espacio \\
+        |\V| & $\V$ & Tautología \\
+        |\F| & $\F$ & Contradicción\\
+    \hline
+    \end{tabular}
+\end{center}
+
+\subsection{Delimitadores}
+
+Para delimitadores, se ulitizan las siguientes abreviaciones
+\begin{center}
+    \begin{tabular}{cc}
+    \hline
+        Comando & Acción \\
+    \hline
+        |\r| & |\right| \\
+        |\l| & |\left| \\
+    \hline
+    \end{tabular}
+\end{center}
+
+Además, para delimitar intervalos mediante la notación de corchetes abiertos se utilizan las siguientes abreviaciones
+\begin{center}
+    \begin{tabular}{cc}
+    \hline
+        Comando & Acción \\
+    \hline
+        |\rop| & |\right[| \\
+        |\lop| & |\left]| \\
+        |\rcl| & |\right]| \\
+        |\lcl| & |\left[| \\
+    \hline
+    \end{tabular}
+\end{center}
+
+\DescribeMacro{\open}
+\DescribeMacro{\openl}
+\DescribeMacro{\openr}
+\DescribeMacro{\close}
+    Finalmente, en intervalos, se utilizan los comandos \cs{open}, \cs{openl}, \cs{openr} y \cs{close}, todos con un argumento obligatorio bajo la misma sintaxis que es\\
+        \hspace*{3em}\cs{open}\marg{extremos},\\
+    obteniendo
+    \begin{center}
+        |\open{a,b} |
+        \hspace{2cm}
+        \fbox{$\open{a,b}$}
+    \end{center}
+    \begin{center}
+        |\openl{a,b} |
+        \hspace{2cm}
+        \fbox{$\openl{a,b}$}
+    \end{center}
+    \begin{center}
+        |\openr{a,b} |
+        \hspace{2cm}
+        \fbox{$\openr{a,b}$}
+    \end{center}
+    \begin{center}
+        |\close{a,b} |
+        \hspace{2cm}
+        \fbox{$\close{a,b}$}
+    \end{center}
+    
+\subsection{Sucesiones}
+
+\DescribeMacro{\suc}
+    El comando \cs{suc} tiene un argumento obligatorio (nombre de la sucesión) y uno opcional (índice, por defecto, $n$) en el formato\\
+        \hspace*{3em}\cs{suc}\oarg{índice}\marg{término general de la sucesión}, \\
+    con esto, el comando genera
+    \begin{center}
+        |\suc{x_n}|
+        \hspace{2cm}
+        \fbox{$\suc{x_n}$}
+    \end{center}
+    o
+    \begin{center}
+        |\suc[k]{x_k}|
+        \hspace{2cm}
+        \fbox{$\suc[k]{x_k}$}
+    \end{center}
+\DescribeMacro{\sucl}
+    El comando \cs{sucl} es igual al anterior, pero genera llaves para las sucesiones.
+    \begin{center}
+        |\sucl{x_n}|
+        \hspace{2cm}
+        \fbox{$\sucl{x_n}$}
+    \end{center}
+    o
+    \begin{center}
+        |\sucl[k]{x_k}|
+        \hspace{2cm}
+        \fbox{$\sucl[k]{x_k}$}
+    \end{center}
+
+\subsection{Comentarios}
+
+\DescribeMacro{comentario}
+    El comando \cs{comentario} tiene un argumento en el formato \\
+        \hspace*{3em} \cs{comentario}\marg{comentario}, \\
+    con esto, el comando genera
+    \begin{center}
+        |\comentario{Texto comentado}|
+        \hspace{2cm}
+        \fbox{\comentario{Texto comentado}}
+    \end{center}
+
+\subsection{Vectores}
+A continuación se detallan los comandos usados para vectores canónicos
+\begin{center}
+    \begin{tabular}{ccc}
+    \hline
+    Comando & Resultado \\
+    \hline
+    |\veci| & $\veci$ \\
+    |\vecj| & $\vecj$ \\
+    |\veck| & $\veck$ \\
+    \hline
+    \end{tabular}
+\end{center}
+
+
+\subsection{Problemas}
+
+Cualquier problema, por favor reportarlo a\\
+mat.andresmerino@gmail.com.
+
+\newpage
+\DocInput{aleph-comandos.dtx}
+
+\end{document}

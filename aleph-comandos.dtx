@@ -1,0 +1,459 @@
+% \iffalse 
+%
+% Copyright (C) 2019 by Andres Merino <mat.andresmerino@gmail.com>
+% 
+% Para un mejor uso y entendimiento del actual paquete, consultar la documentación.
+% -----------------------------------------------------------
+%
+% \fi
+%
+%  \section{Implementación}
+%  \subsection{Identificación}
+%  Dado que esta clase utiliza el comando \cmd{\RequirePackage}, no funciona con 
+%  versiones antiguas de \LaTeXe.
+%    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}[2009/09/24]
+%    \end{macrocode}
+%  El paquete se identifica con su fecha de lanzamiento y su número de versión.
+%  \begin{macrocode}
+\ProvidesPackage{aleph-comandos}[2019/12/17 v1.0]
+%    \end{macrocode}
+%  \subsection{Paquetes}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Paquetes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Son necesarios los siguientes paquetes para utilizar los comandos.
+%    \begin{macrocode}
+\RequirePackage{ifthen}
+\RequirePackage{calc}
+\RequirePackage{etex}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{xcolor}
+%    \end{macrocode}
+%  \subsection{Comandos de función}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Comandos de función
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Función completa
+%    \begin{macrocode}
+\newcommand{\funcion}[5]{%
+    {\setlength{\arraycolsep}{2pt}
+    \begin{array}{r@{\,}ccl}
+        #1\colon & #2 & \longrightarrow & #3\\
+                & #4 & \longmapsto & \displaystyle#5
+    \end{array}
+    }
+}
+%    \end{macrocode}
+%%  Función dom-img
+%    \begin{macrocode}
+\newcommand{\func}[3]{ #1\colon #2 \rightarrow  #3}
+%    \end{macrocode}
+%  \subsection{Conjuntos}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Conjuntos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Números naturales
+%    \begin{macrocode}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Nbb}{\mathbb{N}}
+%    \end{macrocode}
+%%  Números enteros
+%    \begin{macrocode}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Zbb}{\mathbb{Z}}
+%    \end{macrocode}
+%%  Números racionales
+%    \begin{macrocode}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Qbb}{\mathbb{Q}}
+%    \end{macrocode}
+%%  Números reales
+%    \begin{macrocode}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rbb}{\mathbb{R}}
+\newcommand{\reales}{\mathbb{R}}
+%    \end{macrocode}
+%%  Números complejos
+%    \begin{macrocode}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Cbb}{\mathbb{C}}
+%    \end{macrocode}
+%%  Campos
+%    \begin{macrocode}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Kbb}{\mathbb{K}}
+%    \end{macrocode}
+%%  Primos
+%    \begin{macrocode}
+\newcommand{\Pbb}{\mathbb{P}}
+%    \end{macrocode}
+%%  Polinomios
+%    \begin{macrocode}
+\newcommand{\Pol}{\mathcal{P}}
+%    \end{macrocode}
+%%  Matrices
+%    \begin{macrocode}
+\newcommand{\M}{\mathcal{M}}
+%    \end{macrocode}
+%%  Matrices 2
+%    \begin{macrocode}
+\newcommand{\Mat}[3][\R]{#1^{#2\times #3}}
+%    \end{macrocode}
+%%  Números irracionales
+%    \begin{macrocode}
+\newcommand{\Ibb}{\mathbb{I}}
+%    \end{macrocode}
+%  \subsection{Operadores}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Operadores
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Dominio
+%    \begin{macrocode}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\Dom}{Dom}
+%    \end{macrocode}
+%%  Recorrido
+%    \begin{macrocode}
+\DeclareMathOperator{\rec}{rec}
+\DeclareMathOperator{\Rec}{Rec}
+%    \end{macrocode}
+%%  Imagen
+%    \begin{macrocode}
+\DeclareMathOperator{\img}{img}
+\DeclareMathOperator{\Img}{Img}
+%    \end{macrocode}
+%%  Rango de una matriz
+%    \begin{macrocode}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\rang}{rang}
+%    \end{macrocode}
+%%  Matriz adjunta
+%    \begin{macrocode}
+\DeclareMathOperator{\adj}{adj}
+%    \end{macrocode}
+%%  Matriz de cofactores 
+%    \begin{macrocode}
+\DeclareMathOperator{\cof}{cof}
+%    \end{macrocode}
+%%  Espacio generado
+%    \begin{macrocode}
+\DeclareMathOperator{\gen}{gen}
+%    \end{macrocode}
+%%  Proyección
+%    \begin{macrocode}
+\DeclareMathOperator{\proy}{proy}
+%    \end{macrocode}
+%%  Componente normal
+%    \begin{macrocode}
+\DeclareMathOperator{\norm}{norm}
+%    \end{macrocode}
+%%  Interior de un conjunto
+%    \begin{macrocode}
+\DeclareMathOperator{\inte}{int}
+%    \end{macrocode}
+%%  Trigonométricas
+%    \begin{macrocode}
+\renewcommand{\sin}{\sen}
+%    \end{macrocode}
+%%  Trigonométricas inversa
+%    \begin{macrocode}
+\let\arctan\relax
+\DeclareMathOperator{\arctan}{arc\,tan}
+\DeclareMathOperator{\arccsc}{arc\,csc}
+\DeclareMathOperator{\arccot}{arc\,cot}
+\DeclareMathOperator{\arcsec}{arc\,sec}
+%    \end{macrocode}
+%%  Espacio generado
+%    \begin{macrocode}
+\DeclareMathOperator{\spn}{span}
+%    \end{macrocode}
+%%  Parte real y parte imaginaria
+%    \begin{macrocode}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\re}{Re}
+%    \end{macrocode}
+%%  Gráfico de una función
+%    \begin{macrocode}
+\DeclareMathOperator{\graf}{graf}
+%    \end{macrocode}
+%%  Operador signo
+%    \begin{macrocode}
+\DeclareMathOperator{\sgn}{sgn}
+%    \end{macrocode}
+%%  Conjunto de valores admisible
+%    \begin{macrocode}
+\DeclareMathOperator{\CVA}{CVA}
+%    \end{macrocode}
+%%  Conjunto solución
+%    \begin{macrocode}
+\DeclareMathOperator{\Sol}{Sol}
+\DeclareMathOperator{\sol}{Sol}
+%    \end{macrocode}
+%%  Operador cis (cos + i sen)
+%    \begin{macrocode}
+\DeclareMathOperator{\Cis}{Cis}
+\DeclareMathOperator{\cis}{Cis}
+%    \end{macrocode}
+%%  Diámetro
+%    \begin{macrocode}
+\DeclareMathOperator{\diam}{diam}
+%    \end{macrocode}
+%%  Varianza
+%    \begin{macrocode}
+\DeclareMathOperator{\Var}{Var}
+%    \end{macrocode}
+%%  Traza
+%    \begin{macrocode}
+\DeclareMathOperator{\Tr}{tr}
+\DeclareMathOperator{\tr}{tr}
+%    \end{macrocode}
+%%  Máximo común divisor
+%    \begin{macrocode}
+\DeclareMathOperator{\mcd}{mcd}
+%    \end{macrocode}
+%%  Mínimo común múltiplo
+%    \begin{macrocode}
+\DeclareMathOperator{\mcm}{mcm}
+%    \end{macrocode}
+%%  Divergencia
+%    \begin{macrocode}
+\DeclareMathOperator{\dive}{div}
+%    \end{macrocode}
+%%  Rotacional
+%    \begin{macrocode}
+\DeclareMathOperator{\rot}{rot}
+%    \end{macrocode}
+%%  Partes de un conjunto
+%    \begin{macrocode}
+\DeclareMathOperator{\partes}{\mathcal{P}}
+%    \end{macrocode}
+%  \subsection{Operadores como comandos}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Operadores como comandos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Clausura de un conjunto
+%    \begin{macrocode}
+\newcommand{\cl}[1]{\overline{#1}}
+%    \end{macrocode}
+%%  Norma
+%    \begin{macrocode}
+\newcommand{\norma}[1]{%
+    \left\|\ifthenelse{\equal{#1}{}}
+                  {\cdot}{#1}
+    \right\|}
+%    \end{macrocode}
+%%  Producto interno
+%    \begin{macrocode}
+\newcommand{\prodinner}[2]{%
+    \left\langle\ifthenelse{\equal{#1}{}\and\equal{#2}{}}
+               {\cdot,\cdot}
+               {#1,\, #2}
+    \right\rangle}
+%    \end{macrocode}
+%%  Conjugado
+%    \begin{macrocode}
+\newcommand{\conjugate}[1]{\overline{#1}}
+%    \end{macrocode}
+%%  Derivada parcial
+%    \begin{macrocode}
+\newcommand{\parcial}[2]{\dfrac{\partial #1 }{\partial #2}}
+%    \end{macrocode}
+%%  Derivada total
+%    \begin{macrocode}
+\newcommand{\derivada}[2]{\dfrac{d #1 }{d #2}}
+%    \end{macrocode}
+%  \subsection{Abreviaciones}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Abreviaciones
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Diferencia de conjuntos pequeña
+%    \begin{macrocode}
+\renewcommand{\setminus}{\smallsetminus}
+%    \end{macrocode}
+%%  Contenecia de conjuntos con igual
+%    \begin{macrocode}
+\newcommand{\sset}{\subseteq}
+%    \end{macrocode}
+%%  Conjunto vacío
+%    \begin{macrocode}
+\renewcommand{\emptyset}{\varnothing}
+%    \end{macrocode}
+%%  Épsilon
+%    \begin{macrocode}
+\newcommand{\vepsilon}{\varepsilon}
+%    \end{macrocode}
+%%  Texto ``y'' con espacio
+%    \begin{macrocode}
+\newcommand{\texty}{\qquad\text{y}\qquad}
+\newcommand{\yds}{\qquad\text{y}\qquad}
+%    \end{macrocode}
+%%  Texto ``o'' con espacio
+%    \begin{macrocode}
+\newcommand{\texto}{\qquad\text{o}\qquad}
+\newcommand{\ods}{\qquad\text{o}\qquad}
+%    \end{macrocode}
+%%  Texto ``si y solo si'' con espacio
+%    \begin{macrocode}
+\newcommand{\siysolosi}{\quad\text{si y solo si}\quad}
+\newcommand{\ssi}{\quad\text{si y solo si}\quad}
+%    \end{macrocode}
+%%  Grados
+%    \begin{macrocode}
+\newcommand{\degre}{\ensuremath{^\circ}}
+\newcommand{\grad}{\ensuremath{^\circ}}
+%    \end{macrocode}
+%  \subsection{Comandos desplegados}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Comandos desplegados
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Límite en formato desplegado
+%    \begin{macrocode}
+\newcommand{\dlim}{\displaystyle\lim}
+\newcommand{\Lim}{\displaystyle\lim}
+%    \end{macrocode}
+%%  Sumatoria en formato desplegado
+%    \begin{macrocode}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\Sum}{\displaystyle\sum}
+%    \end{macrocode}
+%%  Binomio en formato desplegado
+%    \begin{macrocode}
+\newcommand{\Binom}{\displaystyle\binom}
+%    \end{macrocode}
+%%  Integral en formato desplegado
+%    \begin{macrocode}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\Int}{\displaystyle\int}
+%    \end{macrocode}
+%  \subsection{Abreviaciones de operadores lógicos}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Abreviaciones de operadores lógicos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Doble implicación
+%    \begin{macrocode}
+\newcommand{\Di}{\Longleftrightarrow}
+\newcommand{\dimp}{\Leftrightarrow}
+\newcommand{\Dimp}{\Longleftrightarrow}
+%    \end{macrocode}
+%%  Implicación
+%    \begin{macrocode}
+\newcommand{\Imp}{\Longrightarrow}
+\newcommand{\imp}{\Rightarrow}
+%    \end{macrocode}
+%%  Conectores con espacio
+%    \begin{macrocode}
+\newcommand{\qland}{\quad \land \quad }
+\newcommand{\qlor}{\quad \lor \quad }
+\newcommand{\orm}{\quad \vee \quad }
+\newcommand{\andm}{\quad \wedge \quad }
+%    \end{macrocode}
+%%  Tautología y contradicción
+%    \begin{macrocode}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\F}{\mathbb{F}}
+%    \end{macrocode}
+%  \subsection{Delimitadores}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Delimitadores
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Intervalo abierto izquierda
+%    \begin{macrocode}
+\newcommand{\lop}{\left]}
+%    \end{macrocode}
+%%  Intervalo cerrado izquierda
+%    \begin{macrocode}
+\newcommand{\lcl}{\left[}
+%    \end{macrocode}
+%%  Intervalo abierto derecha
+%    \begin{macrocode}
+\newcommand{\rop}{\right[}
+%    \end{macrocode}
+%%  Intervalo cerrado derecha
+%    \begin{macrocode}
+\newcommand{\rcl}{\right]}
+%    \end{macrocode}
+%%  Izquierda
+%    \begin{macrocode}
+\renewcommand{\l}{\left}
+%    \end{macrocode}
+%%  Derecha
+%    \begin{macrocode}
+\renewcommand{\r}{\right}
+%    \end{macrocode}
+%%  Intervalos
+%    \begin{macrocode}
+\newcommand{\open}[1]{\left]#1\right[}
+\newcommand{\openl}[1]{\left]#1\right]}
+\newcommand{\openr}[1]{\left[#1\right[}
+\newcommand{\close}[1]{\left[#1\right]}
+%    \end{macrocode}
+%  \subsection{Sucesiones}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Sucesiones
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Sucesiones
+%    \begin{macrocode}
+\newcommand{\suc}[2][n]{\left(#2\right)_{#1\in\mathbb{\N}}}
+%    \end{macrocode}
+%%  Sucesiones con llaves
+%    \begin{macrocode}
+\newcommand{\sucl}[2][n]{\left\{#2\right\}_{#1\in\mathbb{\N}}}
+%    \end{macrocode}
+%  \subsection{Comentarios}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Comentarios
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Comentarios
+%    \begin{macrocode}
+\newcommand{\comentario}[1]{\textcolor{red}{#1}}
+%    \end{macrocode}
+%  \subsection{Vectores}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Vectores
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Vectores canónicos
+%    \begin{macrocode}
+\newcommand{\veci}{\mathbf{i}}
+\newcommand{\vecj}{\mathbf{j}}
+\newcommand{\veck}{\mathbf{k}}
+%    \end{macrocode}
+%  \subsection{Formato}
+% \iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --- Formato
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fi
+%%  Formato
+%    \begin{macrocode}
+\allowdisplaybreaks
+%    \end{macrocode}
+% \iffalse
+%%  Y ¡se acabó!
+% \fi
+%    \Finale
+\endinput
