@@ -1,6 +1,6 @@
 % \iffalse 
 %
-% Copyright (C) 2019 by Andres Merino <mat.andresmerino@gmail.com>
+% Copyright (C) 2020 by Andres Merino <mat.andresmerino@gmail.com>
 % 
 % Para un mejor uso y entendimiento del actual paquete, consultar la documentación.
 % -----------------------------------------------------------
@@ -16,7 +16,7 @@
 %    \end{macrocode}
 %  El paquete se identifica con su fecha de lanzamiento y su número de versión.
 %  \begin{macrocode}
-\ProvidesPackage{aleph-comandos}[2019/12/17 v1.0]
+\ProvidesPackage{aleph-comandos}[2020/08/14 v1.1]
 %    \end{macrocode}
 %  \subsection{Paquetes}
 % \iffalse
@@ -298,12 +298,12 @@
 %%  Texto ``y'' con espacio
 %    \begin{macrocode}
 \newcommand{\texty}{\qquad\text{y}\qquad}
-\newcommand{\yds}{\qquad\text{y}\qquad}
+\newcommand{\yds}{\quad\text{y}\quad}
 %    \end{macrocode}
 %%  Texto ``o'' con espacio
 %    \begin{macrocode}
 \newcommand{\texto}{\qquad\text{o}\qquad}
-\newcommand{\ods}{\qquad\text{o}\qquad}
+\newcommand{\ods}{\quad\text{o}\quad}
 %    \end{macrocode}
 %%  Texto ``si y solo si'' con espacio
 %    \begin{macrocode}
@@ -351,11 +351,13 @@
 \newcommand{\Di}{\Longleftrightarrow}
 \newcommand{\dimp}{\Leftrightarrow}
 \newcommand{\Dimp}{\Longleftrightarrow}
+\newcommand{\qDimp}{\quad\Longleftrightarrow\quad}
 %    \end{macrocode}
 %%  Implicación
 %    \begin{macrocode}
 \newcommand{\Imp}{\Longrightarrow}
 \newcommand{\imp}{\Rightarrow}
+\newcommand{\qImp}{\quad\Longrightarrow\quad}
 %    \end{macrocode}
 %%  Conectores con espacio
 %    \begin{macrocode}

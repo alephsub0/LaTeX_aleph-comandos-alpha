@@ -20,15 +20,15 @@
 \newcommand{\ejemplo}[2]{\fbox{#1}\hspace{1cm}\fbox{$#2$}}
 
 \title{\file{aleph-comandos.sty}}
-\author{Andr\'es Merino}
-\date{2019-12-17}
+\author{Proyecto Alephsub0\\ Andr\'es Merino}
+\date{2020-08-14\\ Versión 1.1}
 
 \begin{document}
  
 \maketitle
  
 \begin{abstract}
-    \file{aleph-comandos.sty} es un paquete creado para recopilar varios comandos de uso común entre los colegas de Andrés Merino, dentro de su proyecto personal Alephsub0.
+    \file{aleph-comandos.sty} es un paquete creado para recopilar varios comandos de uso común entre los colegas de Andrés Merino, dentro de su proyecto personal Alephsub0 (\url{https://www.alephsub0.org/}).
 \end{abstract}
 
 \section{Introducción}
@@ -255,9 +255,9 @@ A continuación se detallan las abreviaciones que sirven únicamente en modo mat
             |\sset| & $\sset$ & Contenencia de conjuntos con igual \\
             |\emptyset| & $\emptyset$ & Conjunto vacío \\
             |\vepsilon| & $\varepsilon$ & Épsilon \\
-            |\texty| & $.\texty.$ & Texto ``y'' con espacio \\
+            |\texty| & $.\texty.$ & Texto ``y'' con espacio doble \\
             |\yds| & $.\yds.$ & Texto ``y'' con espacio \\
-            |\texto| & $.\texto.$ & Texto ``o'' con espacio \\
+            |\texto| & $.\texto.$ & Texto ``o'' con espacio doble\\
             |\ods| & $.\ods.$ & Texto ``o'' con espacio \\
             |\siysolosi| & $.\siysolosi.$ & Texto ``si y solo si'' con espacio\\
             |\ssi| & $.\siysolosi.$ & Texto ``si y solo si'' con espacio\\
@@ -339,10 +339,12 @@ A continuación se detallan las abreviaciones de operadores lógicos que sirven 
         |\Dimp| & $\Dimp$ & Doble implicación \\
         |\imp| & $\imp$ & Implicación \\
         |\Imp| & $\Imp$ & Implicación \\
+        |\qDimp| & $.\qDimp.$ & Doble implicación \\
+        |\qImp| & $.\qImp.$ & Implicación \\
         |\qland| & $.\qland.$ & Conjunción con espacio\\
+        |\andm| & $.\andm.$ & Conjunción con espacio \\
         |\qlor| & $.\qlor.$ & Disyunción con espacio \\
-        |\orm| & $.\orm.$ & \\
-        |\andm| & $.\andm.$ & Disyunción con espacio \\
+        |\orm| & $.\orm.$ & Disyunción con espacio \\
         |\V| & $\V$ & Tautología \\
         |\F| & $\F$ & Contradicción\\
     \hline
@@ -362,6 +364,7 @@ Para delimitadores, se ulitizan las siguientes abreviaciones
     \hline
     \end{tabular}
 \end{center}
+Estos comandos no se pueden utilizar a la par con el paquete \package{mmacells}.
 
 Además, para delimitar intervalos mediante la notación de corchetes abiertos se utilizan las siguientes abreviaciones
 \begin{center}
