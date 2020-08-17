@@ -56,7 +56,9 @@
 \newcommand{\Rbb}{\mathbb{R}}
 \newcommand{\reales}{\mathbb{R}}
 %%  Números complejos
-\newcommand{\C}{\mathbb{C}}
+\@ifundefined{C}
+    {\newcommand{\C}{\mathbb{C}}}
+    {\renewcommand{\C}{\mathbb{C}}}
 \newcommand{\Cbb}{\mathbb{C}}
 %%  Campos
 \newcommand{\K}{\mathbb{K}}

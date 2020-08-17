@@ -82,7 +82,9 @@
 %    \end{macrocode}
 %%  Números complejos
 %    \begin{macrocode}
-\newcommand{\C}{\mathbb{C}}
+\@ifundefined{C}
+    {\newcommand{\C}{\mathbb{C}}}
+    {\renewcommand{\C}{\mathbb{C}}}
 \newcommand{\Cbb}{\mathbb{C}}
 %    \end{macrocode}
 %%  Campos
