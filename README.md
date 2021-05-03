@@ -1,20 +1,20 @@
-## aleph-comandos 1.1
+## aleph-comandos 1.1-alpha+001
 
 Este paquete es una recopilación varios comandos de uso común entre los colegas de Andrés Merino, dentro de su proyecto personal Alephsub0 (https://www.alephsub0.org/).  Provee multiples comandos para facilitar la escritura de textos con contenidos matemáticos.
 
-### Últimos cambios
+### Cambios en pruebas
 
 ```
-1.1  2020-08-17
-    - Se incluye un condicional para definir el comando \C que tenía problemas con Beamer y XeLaTeX + hyperref
-1.1  2020-08-14
-    - Se incluye algunos comandos con espacios como \qDimp y \qImp
+1.1-alpha+001 2021-05-02
+    -Se incluye el comando para generar espacios topológicos (\top)
 ```
+
+El paquete en su versión estable puede ser encontrado en:
 
 Repositorio:  https://github.com/mate-andres/LaTeX_aleph-comandos
 
 ________
-Andrés Merino,
+Daniel Lara,
 Proyecto Alephsub0 --- https://www.alephsub0.org/
 
-2020/08/14
+2021/05/01
