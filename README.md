@@ -6,7 +6,7 @@ Este paquete es una recopilación varios comandos de uso común entre los colega
 
 ```
 1.1-alpha+001 2021-05-02
-    -Se incluye el comando para generar espacios topológicos (\top)
+    -Se incluye el comando para generar espacios topológicos (\topo{argumento})
 ```
 
 El paquete en su versión estable puede ser encontrado en:
